@@ -26,7 +26,7 @@ def load.put(bs: List<&2, U32>, m: Array<U32>, +a: U32) -> Array<U32>:
 def build(+d: Nat, +bs: List<&2, U32>, +id: U32) -> H.Fleet:
   match d:
     case 0n:
-      H.VM{H.Hart.new(load.put(bs, [0 : U32*33554432n], 0), id, 0, 0)}
+      H.VM{H.Hart.new(load.put(bs, [0 : U32*16384n], 0), id, 0, 0)}
     case 1n+p:
       a b = build(p, bs, U32.shln(id, 1n)) build(p, bs, U32.add(U32.shln(id, 1n), 1))
       H.Two{a, b}
